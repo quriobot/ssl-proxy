@@ -133,8 +133,8 @@ http {
 
   # https://www.digitalocean.com/community/tutorials/how-to-optimize-nginx-configuration
   client_body_buffer_size 256K;
-  client_header_buffer_size 2k;
-  large_client_header_buffers 4 64k;
+  client_header_buffer_size 1k;
+  large_client_header_buffers 2 32k;
 
   sendfile_max_chunk  1m;
 
@@ -290,10 +290,10 @@ else
   cat << EOF >> /tmp/nginx.conf
       # Recommended: Generalized defaults - Tested on greylog & rancher 2017-01-11 ?
       proxy_buffering on;
-      proxy_buffer_size 2k;
-      proxy_buffers 16 4k;
-      proxy_busy_buffers_size 8k;
-      proxy_temp_file_write_size 128k;
+      proxy_buffer_size   128k;
+      proxy_buffers   4 256k;
+      proxy_busy_buffers_size   256k;
+      proxy_temp_file_write_size 256k;
       # proxy_max_temp_file_size 2m; # remove?
 EOF
 fi
