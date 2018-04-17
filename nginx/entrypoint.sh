@@ -133,8 +133,8 @@ http {
 
   # https://www.digitalocean.com/community/tutorials/how-to-optimize-nginx-configuration
   client_body_buffer_size 256K;
-  client_header_buffer_size 1k;
-  large_client_header_buffers 2 32k;
+  client_header_buffer_size 2k;
+  large_client_header_buffers 4 64k;
 
   sendfile_max_chunk  1m;
 
