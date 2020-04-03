@@ -320,7 +320,7 @@ cat << EOF >> /tmp/nginx.conf
   server {
     # add_header Strict-Transport-Security max-age=17968000 always;
     listen    80;
-    listen    [::]:80 default ipv6only=on;
+    # listen    [::]:80 default ipv6only=on;
     server_name $SERVER_NAME;
     return 301 https://\$server_name:\$server_port\$request_uri;
   }
