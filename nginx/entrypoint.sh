@@ -161,7 +161,7 @@ http {
 
   server {
     listen    $HTTPS_PORT       ssl http2;
-    listen    [::]:$HTTPS_PORT  ssl http2;
+    # listen    [::]:$HTTPS_PORT  ssl http2;
 
     # Credit: https://www.keycdn.com/support/enable-gzip-compression/
     gzip on;
